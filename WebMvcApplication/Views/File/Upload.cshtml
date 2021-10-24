@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<h1>Upload &nbsp;&nbsp; <span style="font-size: 20px;">@Html.ActionLink("Logout", "Logout", "Login")</span></h1>
+<div>
+    <h3>@ViewBag.LoginMessage</h3>
+    @using (Html.BeginForm("UploadFile", "File", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <label for="file">Upload Image:</label>
+        <br />
+        <input type="file" name="files" id="files" multiple/>
+        <br />
+        <br />
+        <input type="submit" value="Upload Image"/>
+        <input type="button" value="Clear" id="reset" />
+        <br />
+        <br />
+    }
+</div>
+<script>
+    $(function () {
+        $("#reset").click(function () {
+            alert("Hi")
+        });
+    });
+</script>
+@Html.ActionLink("Back to File Page", "Index", "File")
+

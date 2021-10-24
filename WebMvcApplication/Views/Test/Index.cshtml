@@ -1,0 +1,102 @@
+﻿@model IEnumerable<WebMvcApplication.Models.Mgmt.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerContact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerPhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerEmail)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerContact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerEmail)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+                        <button onclick="DeleteEmployee('@item.CustomerId')">Delete</button>
+                        @*<button onclick="DeleteEmployee(this)" data-assigned-id="@item.CustomerId">Delete</button>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        function DeleteEmployee(elem) {
+            //var empid = $(elem).data("data-assigned-id");
+            var empid = elem;
+            console.log("EmpId: " + empid + "Type: " + typeof empid);
+            $.ajax({
+                type: 'POST',
+                url: '/Test/DeleteEmp',
+                data: JSON.stringify(empid),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    console.log("Success");
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Test/Index',
+                        data: JSON.stringify(empid),
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (response) {
+                            console.log(response);
+                            console.log("Success");
+                        },
+                        failure: function (response) {
+                            console.log("Failure");
+                            return false;
+                        },
+                        error: function (response) {
+                            console.log("Error:" + response);
+                        }
+                    });
+                },
+                failure: function (response) {
+                    console.log("Failure");
+                    return false;
+                },
+                error: function (response) {
+                    console.log("Error:" + response);
+                }
+            });
+            return false;
+        }
+
+    </script>
+</div>

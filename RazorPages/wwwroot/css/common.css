@@ -1,0 +1,275 @@
+﻿* {
+    outline: none;
+    text-decoration: none !important;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+/*table datalist css*/
+/*===========================================================================================================*/
+.table-container {
+    width: 70%;
+}
+
+
+.table-list-header {
+    display: flex;
+    background: antiquewhite;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+    .table-list-header div {
+        /*width: 20%;*/
+        padding: 10px;
+        font-weight: 700;
+    }
+
+        .table-list-header div:last-child {
+            display: flex;
+            justify-content: center;
+        }
+
+
+.table-list-content {
+    display: flex;
+    border: 1px solid #0000001f;
+}
+
+    .table-list-content div {
+        padding: 10px;
+        /*width: 20%;*/
+    }
+
+    .table-list-content:nth-child(2n+1) {
+        background-color: #ffffff;
+    }
+
+    .table-list-content:nth-child(2n) {
+        background-color: #f0f8ff;
+    }
+
+    .table-list-content div:last-child {
+        display: flex;
+        justify-content: center;
+    }
+
+.table-action-buttom {
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.table-action-available {
+    position: absolute;
+    border: 1px solid white;
+    border-radius:5%;
+    margin-top: 2%;
+    background: antiquewhite;
+    /*width: 170px !important;*/
+}
+
+.table-action-available-container {
+    padding: 0px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.table-action-available-buttom {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+/*===========================================================================================================*/
+
+
+
+/*Tooltip*/
+/*===========================================================================================================*/
+.table-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+    .table-tooltip .table-tooltiptext {
+        visibility: hidden;
+        width: 70px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 35%;
+        margin-left: -35px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+        .table-tooltip .table-tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: auto;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+    .table-tooltip:hover .table-tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+/*===========================================================================================================*/
+
+
+/*button*/
+/*===========================================================================================================*/
+.button_container {
+    border: none;
+    border-radius: 5px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none !important;
+    transition: 0.5s;
+}
+/*
+a:hover{
+    color:currentColor !important;
+}*/
+
+.custom-button {
+    border-radius: 4px;
+    /*background-color: #5ca1e1;*/
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight:600;
+    padding: 10px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+    text-decoration:none !important;
+    outline:none;
+}
+
+.custom-button {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+    .custom-button span{
+        color:#ffffff;
+    }
+
+    .custom-button:hover {
+        color: #ffffff;
+    }
+
+    .custom-button span:hover {
+        color: #ffffff;
+    }
+
+    .custom-button:after {
+        content: '»';
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        color:#fff;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .custom-button:hover {
+        padding-right: 24px;
+        padding-left: 8px;
+        transition: all 0.5s;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    }
+
+        .custom-button:hover:after {
+            opacity: 1;
+            right: 10px;
+        }
+/*===========================================================================================================*/
+
+/*pagination*/
+/*===========================================================================================================*/
+.custom-pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    justify-content:center;
+}
+
+.custom-pagination-list {
+    justify-content: center;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    color: #007bff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: antiquewhite;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    /*outline: none;
+    text-decoration: none !important;*/
+}
+
+.custom-pagination-list:hover {
+    color: #007bff;
+}
+/*===========================================================================================================*/
+
+
+/*list*/
+/*===========================================================================================================*/
+.ul-list {
+    list-style: none;
+    padding:0;
+}
+
+    .ul-list li {
+        border-left: 15px solid transparent;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        padding: 8px 0px 8px 24px;
+        padding-right: 0;
+        margin: 0;
+        font-weight: 700;
+        border-left
+    }
+
+.link-active {
+    border-left-color: #faebd7 !important;
+    border-right-color: #faebd7 !important;
+    border-bottom-color: #faebd7 !important;
+    border-top-color: #faebd7 !important;
+    background-color: #faebd76b;
+}
+/*===========================================================================================================*/
+

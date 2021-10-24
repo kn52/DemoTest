@@ -1,0 +1,330 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import "color-type.css";
+@import "common.css";
+@import "user-management.css";
+
+
+/*body {
+    background: url("../images/backgrondImage.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}*/
+
+body {
+    background-blend-mode: saturation;
+    background: #f9f9f9;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+/*a {
+    color: #0366d6;
+}*/
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    outline: none;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.body-content {
+    display: flex;
+    justify-content: center;
+    min-height: 753px;
+    max-width: 100% !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.parent-container {
+    display:flex;
+    width:100%;
+    max-width: 100% !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.title-container{
+    height:90px;
+}
+
+.side-container {
+    width: 15%;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e5e5;
+}
+
+.content-container {
+    width: 85%;
+    background: #fff;
+    min-height: 644px;
+    margin: 0;
+}
+
+.nav-container {
+    /*display: flex;*/
+    width: 100%;
+    max-width: 100% !important;
+    /* margin-left: 0px !important; */
+    /* margin-right: 0px !important; */
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.main-container {
+    width: 100%;
+    min-height: 87.5%;
+    padding: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.search_form_style {
+    /*display: block;*/
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.home-button-container {
+    padding-top: 2rem;
+}
+
+/*=====Login=====*/
+.login-main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-title {
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.login-child-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+    padding: 2%;
+    border-radius: 5px;
+    background: #00000070;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 20%);
+    width: 350px;
+}
+
+/*Customer page*/
+div[id^=table-action-available-custId-] {
+    width: 170px !important;
+}
+
+div[id^=cust-header] div, div[id^=cust-content] div {
+    width: 20%;
+}
+
+/*Customer  project page*/
+div[id^=table-action-available-projId-] {
+    width: 130px !important;
+}
+
+div[id^=proj-header] div, div[id^=proj-content] div {
+    width: 25%;
+}
+
+/*Customer project skills page*/
+div[id^=table-action-available-skillId-] {
+    width: 90px !important;
+}
+
+div[id^=skill-header] div, div[id^=skill-content] div {
+    width: 25%;
+}
+
+.add-customer-button {
+    background-color: #007bff;
+}
+
+.add-project-button {
+    background-color: #007bff;
+}
+
+.add-skill-button {
+    background-color: #007bff;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.search-icon-container {
+    width:50px;
+    padding: 15%;
+    background: #faebd7;
+}
+
+.form-main-container {
+    border: 1px solid #faebd7;
+    width: 545px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    border-radius:10px;
+}
+
+.form-header-container {
+    display: flex;
+    width: 100%;
+    flex-direction:column;
+    /*justify-content: center;*/
+    padding-top: .5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-hr{
+    width:100%;
+    margin:0;
+}
+
+.form-content-container {
+    padding-top:2rem;
+    width:100%;
+}
+
+.form-button-container{
+    display:flex;
+    justify-content:center;
+}
+
+.form-button-style {
+    display: inline-block;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #28a745;
+    /*border: 1px solid none;*/
+    border:none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    font-family:inherit;
+    margin:0;
+    text-decoration:none;
+}
+
+.form-back-button-container {
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.form-back-button-style {
+    display: inline-block;
+    font-weight: 600;
+    color: #00000070;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff;
+    /*border: 1px solid none;*/
+    border: none;
+    padding: .375rem 1.75rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    font-family: inherit;
+    margin: 0;
+    text-decoration: none !important;
+}
+
+.form-back-button-style:hover{
+    color:#00000070;
+}
+
+.edit-form {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}

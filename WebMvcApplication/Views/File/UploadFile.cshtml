@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "UploadFile";
+}
+
+<h1>UploadFile &nbsp;&nbsp; <span style = "font-size:20px;">@Html.ActionLink("Logout", "Logout", "Login")</span></h1>
+<div>
+    <h3>@ViewBag.LoginMessage</h3>
+    <h3>@ViewBag.Message</h3>
+    <br /><br />
+    @Html.ActionLink("Back to Upload Page", "Upload", "File")
+    @Html.ActionLink("Back to File Page", "Index", "File")
+</div>

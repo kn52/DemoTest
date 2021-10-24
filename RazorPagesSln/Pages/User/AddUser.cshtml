@@ -1,0 +1,42 @@
+﻿@page
+@model RazorPages.Pages.User.AddUserModel
+
+@{
+    ViewData["Title"] = "AddUser";
+}
+
+<h4>Add User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserDetails.Name" class="control-label"></label>
+                <input asp-for="UserDetails.Name" class="form-control" />
+                <span asp-validation-for="UserDetails.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetails.Address" class="control-label"></label>
+                <input asp-for="UserDetails.Address" class="form-control" />
+                <span asp-validation-for="UserDetails.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetails.City" class="control-label"></label>
+                <input asp-for="UserDetails.City" class="form-control" />
+                <span asp-validation-for="UserDetails.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="DisplayUser">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

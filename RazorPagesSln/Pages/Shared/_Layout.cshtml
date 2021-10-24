@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Layout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RazorPages</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="margin-bottom:0px;">
+    <div class="container body-content">
+        @if (Context.Session.GetString("username") != null && Context.Session.GetString("password") != null)
+        {
+            <div class="parent-container">
+                <div class="pb-3 side-container box-shadow">
+                    <div class="title-container"></div>
+                    <ul class="ul-list pointer-cursor">
+                        <li class="@(Context.Session.GetString("viewname") == "All Customers" ? "link-active" : "")">
+                            All Customers
+                        </li>
+                        <li class="@(Context.Session.GetString("viewname") == "Customer Projects" ? "link-active" : "")">
+                            Customer Projects
+                        </li>
+                        <li class="@(Context.Session.GetString("viewname") == "Project Skills" ? "link-active" : "")">
+                            Project Skills
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-container">
+                    <div>
+                        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom mb-3">
+                            <div class="container nav-container">
+                                <a class="navbar-brand" asp-area="" asp-page="/Customers/Index">
+                                    <img src="~/images/user-management.svg" class="user-managemen-image" />
+                                </a>
+                                @{
+                                    <span class="user-managemen-image-text">@Context.Session.GetString("viewname")</span>
+                                }
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                    <ul class="navbar-nav flex-grow-1">
+                                        <li class="nav-item">
+                                            @*<a class="nav-link text-dark" asp-area="" asp-page="/Home/Home">Home</a>*@
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                    <a href="@Url.Page("/Common/CommonOps","LogoutEmp")">
+                                        <img src="~/images/logout-button.svg" width="30px" height="30px" />
+                                    </a>
+                                </div>
+                        </nav>
+                    </div>
+                    <main role="main" class="pb-3 main-container">
+                        @RenderBody()
+                    </main>
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        }
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - RazorPages - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            </div>
+        </footer>*@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<script src="~/js/Hello.js" asp-append-version="true"></script>*@
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

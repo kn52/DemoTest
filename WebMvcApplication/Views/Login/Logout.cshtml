@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<h1>Logout</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <h3>@ViewBag.NameMessage</h3>
+            <h3>@ViewBag.LogoutMessage</h3>
+            <h6>@ViewBag.SessionMessage</h6>
+            <h6>@ViewBag.LoginMessage</h6>
+        </div>
+        <form asp-action="Index" asp-controller="Login">
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+        @Html.ActionLink("Back to Home Page", "Index", "Home")
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@page
+@model RazorPages.Pages.Customers.CustomerProjectEditModel
+@{
+    ViewData["Title"] = "Edit Customer Project";
+}
+
+<h4>Edit Customer Project</h4>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Customer.CustomerId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Customer.CustomerId)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Customer.CustomerName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Customer.CustomerName)
+    </dd>
+</dl>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customer.CustomerId" />
+            <div class="form-group">
+                <label asp-for="Project.ProjectName" class="control-label"></label>
+                <input asp-for="Project.ProjectName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="control-label">ProjectState</label>
+                <select asp-for="@Model.PDescription.First(x=>x.PDescriptionId == Model.Customer.Projects[0].PD).PDescriptionId" class="form-control"
+                        asp-items="ViewBag.PCode">
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="CustomerProjects" asp-route-id="@Model.Customer.CustomerId">
+        Back to Customer Projects
+    </a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

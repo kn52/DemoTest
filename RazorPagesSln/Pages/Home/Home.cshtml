@@ -1,0 +1,30 @@
+﻿@page 
+@model RazorPages.Pages.Home.HomeModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h4>Home</h4>
+<p>
+    <a class="btn btn-outline-primary" asp-page="AddUrls">Add Url</a>
+</p>
+<br />
+<div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="control-label" style="font-size:large; font-weight:bolder;">
+                @ViewData["RedirectionMessage"]
+            </label>
+            <br />
+            <select asp-for="@Model.RedirectUrls.First().Url" class="form-control"
+                  style="min-width:200px; max-width:max-content"  
+                    asp-items="ViewBag.UrlDescription">
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Continue" class="btn btn-outline-success" />
+        </div>
+    </form>
+</div>

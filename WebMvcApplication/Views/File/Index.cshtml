@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>File &nbsp;&nbsp; <span style="font-size:20px;">@Html.ActionLink("Logout", "Logout", "Login")</span></h1>
+<div>
+    <h3>@ViewBag.LoginMessage</h3>
+    @Html.ActionLink("Upload File", "Upload", "File")&nbsp;
+    @Html.ActionLink("View Files", "ViewFile", "File")
+    <br /><br />
+    @Html.ActionLink("Back to Home Page", "Logout", "Login")
+</div>
+

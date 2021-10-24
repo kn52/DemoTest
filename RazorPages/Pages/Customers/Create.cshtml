@@ -1,0 +1,56 @@
+﻿@page
+@model RazorPages.Pages.Customers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="form-main-container">
+    <div class="form-back-button-container">
+        <a asp-page="Index" class="form-back-button-style">x</a>
+    </div>
+    <div class="form-header-container">
+        <h3>Add Customer</h3>
+        <hr class="form-hr"/>
+    </div>
+    <div class="form-content-container">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="edit-form">
+                <div class="form-group">
+                    <label asp-for="Customer.CustomerName" class="control-label"></label>
+                    <input asp-for="Customer.CustomerName" class="form-control" />
+                    <span asp-validation-for="Customer.CustomerName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Customer.CustomerContact" class="control-label"></label>
+                    <input asp-for="Customer.CustomerContact" class="form-control" />
+                    <span asp-validation-for="Customer.CustomerContact" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="edit-form">
+                <div class="form-group">
+                    <label asp-for="Customer.CustomerPhone" class="control-label"></label>
+                    <input asp-for="Customer.CustomerPhone" class="form-control" />
+                    <span asp-validation-for="Customer.CustomerPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Customer.CustomerEmail" class="control-label"></label>
+                    <input asp-for="Customer.CustomerEmail" class="form-control" />
+                    <span asp-validation-for="Customer.CustomerEmail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-button-container">
+                    <input type="submit" value="Save" class="form-button-style" />
+                    &nbsp;&nbsp;
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
