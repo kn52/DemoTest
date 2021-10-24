@@ -12,8 +12,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMvcApplication.Configs;
 using WebMvcApplication.DbC;
-using WebMvcApplication.Logs;
+using WebMvcApplication.LoggerModel;
+using WebMvcApplication.ProjectSettings;
 
 namespace WebMvcApplication
 {
@@ -30,20 +32,8 @@ namespace WebMvcApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<Credentials.Credentials>();
-            services.AddSingleton<LogInfo>();
-            services.AddSession();
-            var loggerconfiguration = new ConfigurationBuilder()
-                    .AddJsonFile($"appsettings.json")
-                    .Build();
-            var serilogLogger = Logger.LoggerFactory.Initialize(loggerconfiguration);
-            services.AddLogging(builder =>
-            {
-                builder.SetMinimumLevel(LogLevel.Information);
-                builder.AddSerilog(logger: serilogLogger, dispose: true);
-            });
-            string _dbConn = Configuration["ConnectionStrings:MyDBConnection"];
-            services.AddDbContextPool<DBC>(options => options.UseMySql(_dbConn, ServerVersion.AutoDetect(_dbConn)));
+            services.AddStartupServices(Configuration);
+            services.AddModelExtensions();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,7 +6,7 @@ using System.IO;
 using WebMvcApplication.Encrypt_Decrypt;
 using WebMvcApplication.Credentials;
 using System;
-using WebMvcApplication.Logs;
+using WebMvcApplication.LoggerModel;
 using Newtonsoft.Json;
 
 namespace WebMvcApplication.Controllers
