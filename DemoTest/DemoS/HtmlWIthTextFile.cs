@@ -12,8 +12,10 @@ namespace DemoTest.DemoS
             StringBuilder str = new StringBuilder();
             
             var directory = Directory.GetCurrentDirectory();
-            string mainhtml = string.Join("", Path.Combine(directory.Substring(0, directory.IndexOf("bin") - 1), "Files", "TEXTs", "TextFile.txt"));
-            string dychtml = string.Join("", Path.Combine(directory.Substring(0, directory.IndexOf("bin") - 1), "Files", "TEXTs", "TextFile1.txt"));
+            string mainhtml = string.Join("", File.ReadAllLines(Path.Combine(directory.Substring(0, directory.IndexOf("bin") - 1), "Files", "TEXTs", "TextFile.txt")));
+            string dychtml = string.Join("", File.ReadAllLines(Path.Combine(directory.Substring(0, directory.IndexOf("bin") - 1), "Files", "TEXTs", "TextFile1.txt")));
+
+            string dyc1html = string.Join("", File.ReadAllLines(Path.Combine(directory.Substring(0, directory.IndexOf("bin") - 1), "Files", "HTMLs", "emailer.html")));
 
             for (int i = 0; i < 2; i++)
             {
@@ -22,8 +24,10 @@ namespace DemoTest.DemoS
                 str.Append(body);
             }
             var finalhtml = mainhtml.Replace("@@bodycontent", str.ToString());
-
             Console.WriteLine(finalhtml);
+    
+            var htm = dyc1html.Replace("@@count", "1");
+            Console.WriteLine(htm);
         }
 
             

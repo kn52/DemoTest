@@ -12,9 +12,7 @@
 			]]>
 		</HeaderTemplate>
 		<BodyTemplate>
-			<![CDATA[
-				<p>Paragrah @@num</p>
-			]]>
+			<![CDATA[ <p>Paragrah @@num</p> ]]>
 		</BodyTemplate>
 		<FooterTemplate>
 			<![CDATA[

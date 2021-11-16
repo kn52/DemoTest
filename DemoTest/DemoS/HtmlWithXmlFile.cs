@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml.Linq;
+using Microsoft.Extensions.Hosting;
 
 namespace DemoTest.DemoS
 {
@@ -12,9 +13,8 @@ namespace DemoTest.DemoS
         public void FromHtmlWithXmlFile()
         {
             HtmlWithXmlDocument xmldoc = new HtmlWithXmlDocument();
-            
-            var directory = Directory.GetCurrentDirectory();
-            XDocument doc = XDocument.Load(Path.Combine(directory.Substring(0, directory.IndexOf("bin") - 1), "Files", "XMLs", "EmailTemplate.xml"));
+            string xmlpath = Path.Combine(Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().IndexOf("bin") - 1), "Files", "XMLs", "EmailTemplate.xml");
+            XDocument doc = XDocument.Load(xmlpath);
 
             foreach(XElement element in doc.Descendants("EmailContainers").Descendants("EmailContainer"))
             {
