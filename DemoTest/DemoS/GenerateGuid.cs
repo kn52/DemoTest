@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DemoTest.DemoModel
+namespace DemoTest.DemoS
 {
     public class GenerateGuid
     {

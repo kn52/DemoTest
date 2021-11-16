@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DemoTest.DemoModel
+namespace DemoTest.DemoS
 {
     public class PercentEncode
     {

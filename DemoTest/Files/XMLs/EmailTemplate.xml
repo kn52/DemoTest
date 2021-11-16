@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EmailContainers>
+	<EmailContainer>
+		<HeaderTemplate>
+			<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+				<html>
+					<head>
+						<title></title>
+					</head>
+					<body>
+			]]>
+		</HeaderTemplate>
+		<BodyTemplate>
+			<![CDATA[
+				<p>Paragrah @@num</p>
+			]]>
+		</BodyTemplate>
+		<FooterTemplate>
+			<![CDATA[
+					</body>
+				</html>
+			]]>
+		</FooterTemplate>
+	</EmailContainer>
+</EmailContainers>
