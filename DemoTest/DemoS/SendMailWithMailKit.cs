@@ -1,5 +1,7 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
+using MimeKit.Text;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,10 +16,12 @@ namespace DemoTest.DemoS
 			message.From.Add(new MailboxAddress("Easyrewardz", "info@easyrewardz.com"));
 			message.To.Add(new MailboxAddress("Aashish", "aashish@easywardz.com"));
 			message.Subject = "How you doin'?";
-			message.Body = new TextPart("plain")
+			message.Body = new TextPart(TextFormat.Plain)
 			{
 				Text = @"Hey Chandler, I just wanted to let you know that Monica and I were going to go play some paintball, you in? -- Joey"
 			};
+
+            Console.WriteLine(message);
 
             using (var client = new SmtpClient())
             {
