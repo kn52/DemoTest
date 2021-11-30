@@ -8,8 +8,8 @@ using RazorPages.DBContext;
 namespace RazorPages.Migrations
 {
     [DbContext(typeof(RazorDBContext))]
-    [Migration("20210621044136_INITMIG3")]
-    partial class INITMIG3
+    [Migration("20211128193733_INIT0")]
+    partial class INIT0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -77,8 +77,8 @@ namespace RazorPages.Migrations
                         .HasColumnType("int")
                         .HasColumnName("CustomerId");
 
-                    b.Property<string>("PD")
-                        .HasColumnType("longtext");
+                    b.Property<int>("PD")
+                        .HasColumnType("int");
 
                     b.Property<string>("ProjectName")
                         .HasColumnType("longtext")
@@ -102,8 +102,8 @@ namespace RazorPages.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ProjectId");
 
-                    b.Property<string>("SD")
-                        .HasColumnType("longtext");
+                    b.Property<int>("SD")
+                        .HasColumnType("int");
 
                     b.HasKey("ProjectSkillId");
 
@@ -130,6 +130,23 @@ namespace RazorPages.Migrations
                     b.HasKey("SDescriptionId");
 
                     b.ToTable("SDescriptions");
+                });
+
+            modelBuilder.Entity("RazorPages.Entity.Home.RedirectUrls", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UrlDescription")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RedirectUrls");
                 });
 
             modelBuilder.Entity("RazorPages.Entity.LoginCredentials", b =>

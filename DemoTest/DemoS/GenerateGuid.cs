@@ -11,7 +11,7 @@ namespace DemoTest.DemoS
         {
             Guid guid = Guid.NewGuid();
             var gud = Convert.ToString(guid);
-            Console.WriteLine("Guid number" + guid);
+            Console.WriteLine("Guid number: " + guid);
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using DemoTest.DemoS;
 using Microsoft.CodeAnalysis;
 using System;
-using System.IO;
-using System.Reflection;
-using System.Text;
 
 namespace DemoTest
 {
@@ -13,10 +10,33 @@ namespace DemoTest
         {
             Console.WriteLine("Hello World!");
 
-            //var hash = new Sha512Generator().SHA512HashGenerator();
-            //int rdvalue = new FunctionReturn().getRandomNumber();
-            //new HtmlWIthTextFile().FormHtmlWithFile();
-            new HtmlWithXmlFile().FromHtmlWithXmlFile();
+            //================Methods================
+            Console.WriteLine("==============================");
+            SendMailWithMailKit.SendEmailProcess();
+
+            //Console.WriteLine("==============================");
+            //SendEmail.SendEmailProcess("");
+
+            //Console.WriteLine("==============================");
+            //HtmlWithXmlFile.FromHtmlWithXmlFile();
+            
+            //Console.WriteLine("==============================");
+            //HtmlWIthTextFile.FormHtmlWithFile();
+
+            //Console.WriteLine("==============================");
+            //HtmlFormation.FormHtml();
+
+            //Console.WriteLine("==============================");
+            //PercentEncode.Signature();
+
+            //Console.WriteLine("==============================");
+            //GenerateGuid.GenerateUniqueGuid();
+            
+            //Console.WriteLine("==============================");
+            //FunctionReturn.getRandomNumber();
+            
+            //Console.WriteLine("==============================");
+            //Sha512Generator.SHA512HashGenerator();
         }
 
     }

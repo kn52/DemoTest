@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DemoTest.DemoS
 {
     public class FunctionReturn
     {
-        public int getRandomNumber()
+        public static void getRandomNumber()
         {
             var callfunc = getRandomMethod();
-            return callfunc();
+            var num = callfunc();
+            Console.WriteLine("Random Number: " + num);
         }
 
-        public Func<int> getRandomMethod()
+        public static Func<int> getRandomMethod()
         {
             return GenerateRandomNumber;
         }
 
-        public int GenerateRandomNumber()
+        public static int GenerateRandomNumber()
         {
             Random rd = new Random();
             return rd.Next(1, 100);

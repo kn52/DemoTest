@@ -26,7 +26,7 @@ namespace DemoTest.DemoS
             htmlCont.Append("<h5>Pin</h5>");
             htmlCont.Append("<h5>xxxxxx</h5>");
             htmlCont.Append("</body></html>");
-            Console.WriteLine(htmlCont);
+            Console.WriteLine("FormHtml: " + htmlCont);
             //SendEmailProcess(htmlCont.ToString());
         }
 

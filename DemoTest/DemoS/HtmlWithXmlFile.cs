@@ -10,7 +10,7 @@ namespace DemoTest.DemoS
 {
     public class HtmlWithXmlFile
     {
-        public void FromHtmlWithXmlFile()
+        public static void FromHtmlWithXmlFile()
         {
             HtmlWithXmlDocument xmldoc = new HtmlWithXmlDocument();
             string xmlpath = Path.Combine(Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().IndexOf("bin") - 1), "Files", "XMLs", "EmailTemplate.xml");
@@ -30,7 +30,7 @@ namespace DemoTest.DemoS
             mainHtm.Append(xmldoc.BodyTemplate.Replace("@@num", "xx"));
             mainHtm.Append(xmldoc.FooterTemplate);
 
-            Console.WriteLine(mainHtm);
+            Console.WriteLine("XmlHtml: "+mainHtm);
         }
     }
 }

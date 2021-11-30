@@ -7,7 +7,7 @@ namespace DemoTest.DemoS
 {
     public class Sha512Generator
     {
-        public string SHA512HashGenerator()
+        public static void SHA512HashGenerator()
         {
             string input = "Onlinecn6hiH" + "|" + decimal.Parse("469000.00").ToString("F4")
                 + "|" + "Bidesi" + "|" + "bidesi@easyrewardz.com" + "||||||" + "OnlinehgGlFiR0";
@@ -19,7 +19,7 @@ namespace DemoTest.DemoS
             {
                 hash.Append(bytes[i].ToString("x2").ToLower());
             }
-            return hash.ToString();
+            Console.WriteLine("Sha512 Generated: "+ hash.ToString());
         }
     }
 }

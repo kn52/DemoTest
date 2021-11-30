@@ -7,7 +7,7 @@ namespace DemoTest.DemoS
 {
     class HtmlWIthTextFile
     {
-        public void FormHtmlWithFile()
+        public static void FormHtmlWithFile()
         {
             StringBuilder str = new StringBuilder();
             
@@ -27,7 +27,7 @@ namespace DemoTest.DemoS
             Console.WriteLine(finalhtml);
     
             var htm = dyc1html.Replace("@@count", "1");
-            Console.WriteLine(htm);
+            Console.WriteLine("TxtHtml: " + htm);
         }
 
             

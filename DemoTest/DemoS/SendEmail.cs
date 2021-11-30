@@ -23,15 +23,15 @@ namespace DemoTest.DemoS
                         objSmtpClient.Credentials = objNetworkCredential;
                         //Add SocketLabs MessageID and MailingID [ https://support.socketlabs.com/kb/48 ]
                         objMailMessage.Headers.Add("X-xsMessageId", "SSIPL EasyRewardz Account Summary");
-                        objMailMessage.Headers.Add("X-xsMailingId", "aashish@easyrewardz.com");
+                        objMailMessage.Headers.Add("X-xsMailingId", "aashish52922@gmail.com");
 
                         objMailMessage.From = new MailAddress("storepaysupport@easyrewardz.com");
 
-                        if (!string.IsNullOrEmpty("aashish@easyrewardz.com"))
+                        if (!string.IsNullOrEmpty("aashish52922@gmail.com"))
                         {
                             if ("aashish@easyrewardz.com".Contains(";"))
                             {
-                                string[] ToEmailAddresses = "aashish@easyrewardz.com".Split(';');
+                                string[] ToEmailAddresses = "ashish.com".Split(';');
                                 foreach (string ToAddress in ToEmailAddresses)
                                 {
                                     if (!string.IsNullOrEmpty(ToAddress))
@@ -42,7 +42,7 @@ namespace DemoTest.DemoS
                             }
                             else
                             {
-                                objMailMessage.To.Add(new MailAddress("aashish@easyrewardz.com"));
+                                objMailMessage.To.Add(new MailAddress("aashish52922@gmail.com"));
                             }
                         }
 

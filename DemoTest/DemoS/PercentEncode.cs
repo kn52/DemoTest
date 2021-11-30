@@ -87,7 +87,7 @@ namespace DemoTest.DemoS
                 }
             }
 
-            Console.WriteLine(hash);
+            Console.WriteLine("PrecentEncode hash: "+hash);
         }
     }
 }
