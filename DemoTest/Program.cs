@@ -12,7 +12,10 @@ namespace DemoTest
 
             //================Methods================
             Console.WriteLine("==============================");
-            SendMailWithMailKit.SendEmailProcess();
+            BlobStorageOperations.GetBlobStorageContainer();
+
+            //Console.WriteLine("==============================");
+            //SendMailWithMailKit.SendEmailProcess();
 
             //Console.WriteLine("==============================");
             //SendEmail.SendEmailProcess("");

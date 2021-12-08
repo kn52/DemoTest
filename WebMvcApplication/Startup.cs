@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using WebMvcApplication.Configs;
 using WebMvcApplication.DbC;
 using WebMvcApplication.LoggerModel;
+using WebMvcApplication.Middlewares;
 using WebMvcApplication.ProjectSettings;
 
 namespace WebMvcApplication
@@ -51,6 +52,7 @@ namespace WebMvcApplication
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCustomMiddleware();
 
             app.UseRouting();
 
