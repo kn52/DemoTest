@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "RazorPages\Ra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMvcApplication", "WebMvcApplication\WebMvcApplication.csproj", "{196D644B-68F6-4F39-ACCC-945C424EDF1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiApp", "WebApiApp\WebApiApp.csproj", "{7BAC09C1-847B-4633-82D9-6537C5228229}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{196D644B-68F6-4F39-ACCC-945C424EDF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196D644B-68F6-4F39-ACCC-945C424EDF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196D644B-68F6-4F39-ACCC-945C424EDF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BAC09C1-847B-4633-82D9-6537C5228229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BAC09C1-847B-4633-82D9-6537C5228229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BAC09C1-847B-4633-82D9-6537C5228229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BAC09C1-847B-4633-82D9-6537C5228229}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

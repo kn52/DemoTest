@@ -1,5 +1,5 @@
-﻿using DemoTest.DemoS;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
+using Newtonsoft.Json;
 using System;
 
 namespace DemoTest
@@ -9,36 +9,39 @@ namespace DemoTest
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Models.DemoTest demoTest = new Models.DemoTest() 
+            { 
+                demo0 = "0",
+                demo1 = "1",
+                demo2 = "2",
+                demo3 = "3"
+            };
+            var sk = new { ab = demoTest, bd = "aashish" };
+            var k = JsonConvert.SerializeObject(sk);
 
             //================Methods================
-            Console.WriteLine("==============================");
-            BlobStorageOperations.GetBlobStorageContainer();
+            Console.WriteLine("===============OPS===============");
+            //LinqOps.Operations();
 
-            //Console.WriteLine("==============================");
+            //BlobStorageOperations.GetFromBlobStorageContainer();
+            //BlobStorageOperations.UploadToBlobStorageContainer();
+
             //SendMailWithMailKit.SendEmailProcess();
 
-            //Console.WriteLine("==============================");
             //SendEmail.SendEmailProcess("");
 
-            //Console.WriteLine("==============================");
             //HtmlWithXmlFile.FromHtmlWithXmlFile();
-            
-            //Console.WriteLine("==============================");
+
             //HtmlWIthTextFile.FormHtmlWithFile();
 
-            //Console.WriteLine("==============================");
             //HtmlFormation.FormHtml();
 
-            //Console.WriteLine("==============================");
             //PercentEncode.Signature();
 
-            //Console.WriteLine("==============================");
             //GenerateGuid.GenerateUniqueGuid();
-            
-            //Console.WriteLine("==============================");
+
             //FunctionReturn.getRandomNumber();
-            
-            //Console.WriteLine("==============================");
+
             //Sha512Generator.SHA512HashGenerator();
         }
 
