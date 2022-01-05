@@ -9,8 +9,8 @@ namespace DemoTest.DemoS
     {
         public static void SHA512HashGenerator()
         {
-            string input = "Onlinecn6hiH" + "|" + decimal.Parse("469000.00").ToString("F4")
-                + "|" + "Bidesi" + "|" + "bidesi@easyrewardz.com" + "||||||" + "OnlinehgGlFiR0";
+            string input = "nLKNLKOIknkdsa" + "|" + decimal.Parse("469000.00").ToString("F4")
+                + "|" + "Bid" + "|" + "bid@syrewz.com" + "||||||" + "OOJLDnalkslk";
             StringBuilder hash = new StringBuilder();
             SHA512 shaM = new SHA512Managed();
             byte[] bytes = shaM.ComputeHash(new UTF8Encoding().GetBytes(input));

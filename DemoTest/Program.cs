@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using DemoTest.DemoS;
 using Newtonsoft.Json;
 using System;
 
@@ -21,7 +21,7 @@ namespace DemoTest
 
             //================Methods================
             Console.WriteLine("===============OPS===============");
-            //LinqOps.Operations();
+            LinqOps.Operations();
 
             //BlobStorageOperations.GetFromBlobStorageContainer();
             //BlobStorageOperations.UploadToBlobStorageContainer();
@@ -44,6 +44,5 @@ namespace DemoTest
 
             //Sha512Generator.SHA512HashGenerator();
         }
-
     }
 }
