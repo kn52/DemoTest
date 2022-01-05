@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMvcApplication.Models;
+using WebMvcApplication.Models.Home;
 
 namespace WebMvcApplication.Controllers
 {
@@ -22,7 +23,12 @@ namespace WebMvcApplication.Controllers
         {
             ViewBag.JavaScriptFunction = "Javascriptfunction()";
             ViewBag.JavaScriptFunction = string.Format("ShowGreetings('{0}');", "aashish");
-            return View();
+            List<Users> usr = new List<Users>() {
+                new Users() {id = "1", name = "aashish"},
+                new Users() {id = "2", name = "ak"}
+            };
+
+            return View(usr);
         }
 
         public IActionResult Privacy()

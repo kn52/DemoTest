@@ -1,19 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<WebMvcApplication.Models.Home.Users>
+
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    @if (ViewBag.JavaScriptFunction != null)
+<div>
+    @foreach (var usr in Model.ToList())
     {
-        @*<script type="text/javascript">
-        @Html.Raw(ViewBag.JavaScriptFunction)
-        </script>*@
+        <p>@usr.id=>@usr.name</p>
     }
 </div>
-<script>
-    function ShowGreetings(name) {
-        alert("Name: " + name);
-    };
-</script>
